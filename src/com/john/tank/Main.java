@@ -10,7 +10,5 @@ public class Main {
             Thread.sleep(50);
             tf.repaint();
         }
-        
-        test123£»
     }
 }
