@@ -4,6 +4,9 @@ import java.awt.*;
 import java.text.BreakIterator;
 
 public class Tank {
+	
+	public static int WIDTH = ResourceMgr.tankD.getWidth();
+    public static int HEIGHT = ResourceMgr.tankD.getHeight();
 
     private int x, y;
     private Dir dir = Dir.DOWN;
@@ -82,6 +85,8 @@ public class Tank {
     }
 
     public void fire() {
-        tf.bullets.add(new Bullet(this.x, this.y, this.dir, this.tf));
+    	int bX = this.x + WIDTH / 2 - Bullet.WIDTH / 2;
+    	int bY = this.y + HEIGHT / 2 - Bullet.HEIGHT / 2;
+        tf.bullets.add(new Bullet(bX, bY, this.dir, this.tf));
     }
 }
