@@ -1,6 +1,7 @@
 package com.john.tank;
 
 import java.awt.*;
+import java.text.BreakIterator;
 
 public class Tank {
 
@@ -30,14 +31,27 @@ public class Tank {
         this.tf = tf;
     }
 
-    public void paint(Graphics g) { //坦克内部的paint方法，画出一个坦克
+    public void paint(Graphics g) { //坦克内部的paint方法，画出一个坦克  
+    	switch (dir) {
+		case LEFT:
+			g.drawImage(ResourceMgr.tankL, x, y, null);
+			break;
+		case UP:
+			g.drawImage(ResourceMgr.tankU, x, y, null);
+			break;
+		
+		case RIGHT:
+			g.drawImage(ResourceMgr.tankR, x, y, null);
+			break;
+		case DOWN:
+			g.drawImage(ResourceMgr.tankD, x, y, null);
+			break;
 
-        Color c = g.getColor(); //保存原来画笔的颜色
-        g.setColor(Color.YELLOW);  //坦克的颜色
-        g.fillRect(x, y,50, 50);
-        g.setColor(c);
-
-
+		default:
+			break;
+		}
+    	
+        
         move();
     }
 
