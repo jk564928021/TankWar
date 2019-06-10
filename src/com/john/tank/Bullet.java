@@ -13,7 +13,7 @@ public class Bullet {
     private boolean living = true;
     private Group group = Group.BAD;
 
-    public Bullet(int x, int y, Dir dir, TankFrame tf) {
+    public Bullet(int x, int y, Dir dir, Group group, TankFrame tf) {
         this.x = x;
         this.y = y;
         this.dir = dir;

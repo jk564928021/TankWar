@@ -9,7 +9,7 @@ public class Tank {
 	public static int WIDTH = ResourceMgr.tankD.getWidth();
     public static int HEIGHT = ResourceMgr.tankD.getHeight();
 
-    private static final int SPEED = 5;
+    private static final int SPEED = 1;
     
     private Random random = new Random();
     
@@ -33,7 +33,7 @@ public class Tank {
     public void fire() {
     	int bX = this.x + WIDTH / 2 - Bullet.WIDTH / 2;
     	int bY = this.y + HEIGHT / 2 - Bullet.HEIGHT / 2;
-        tf.bullets.add(new Bullet(bX, bY, this.dir, this.tf));
+        tf.bullets.add(new Bullet(bX, bY, this.dir, this.group, this.tf));
     }
     
     public Group getGroup() {
@@ -121,8 +121,8 @@ public class Tank {
     public void setY(int y) {
 		this.y = y;
 	}
+    
 	public void die() {
-		// TODO Auto-generated method stub
 		this.living = false;
 	}
 }
